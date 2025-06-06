@@ -148,10 +148,3 @@ MIT License
 Star it on GitHub and share with your recon team 🖤
 
 ```
-
----
-
-Let me know if you want a `setup.sh` installer script that:
-- Checks Python version
-- Installs dependencies
-- Installs the tool globally in one go.
