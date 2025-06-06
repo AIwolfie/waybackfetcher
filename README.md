@@ -132,8 +132,8 @@ These are friendly hints to improve recon coverage.
 **👨‍💻 Mayank Malaviya**
 
 * GitHub: [AIwolfie](https://github.com/AIwolfie)
-* Medium: [@mayankmalaviya](https://medium.com/@mayankmalaviya)
-* LinkedIn: [Mayank's Profile](https://linkedin.com/in/mayank-malaviya)
+* Medium: [@mayankmalaviya](https://aiwolfie.medium.com/)
+* LinkedIn: [Mayank's Profile](https://www.linkedin.com/in/mayank-malaviya-69138b25a/)
 
 ---
 
@@ -144,7 +144,6 @@ MIT License
 ---
 
 ## ☕ Like it?
+<a href="https://www.buymeacoffee.com/mayankmalac" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 Star it on GitHub and share with your recon team 🖤
-
-```
