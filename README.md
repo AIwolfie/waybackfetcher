@@ -15,8 +15,6 @@ Built by: **Mayank Malaviya** ([@AIwolfie](https://github.com/AIwolfie)) ⚡
 ✅ Outputs unique URLs only  
 ✅ Verbose mode to show live fetching  
 ✅ Summary of total domains, URLs, and time taken  
-✅ Smart suggestions if no results found  
-✅ Built-in help menu and credits  
 
 ---
 
