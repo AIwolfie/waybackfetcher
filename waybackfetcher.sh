@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #===========================================================
-# 🕸️ Wayback URL Fetcher - With Progress Bar
+# 🕸️ Wayback URL Fetcher 
 # Author : Mayank Malaviya (aka AIwolfie)
 # GitHub : github.com/AIwolfie
 # Version: 1.2
