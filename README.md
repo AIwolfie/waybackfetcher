@@ -1,7 +1,7 @@
 
-# 🕸️ Wayback URL Fetcher
+# 🕸️ Wayback URL Fetcher (Bash Edition)
 
-A blazing-fast Python CLI tool that fetches historical URLs from the **Wayback Machine (archive.org)** for a single domain or a list of domains — perfect for **bug bounty**, **OSINT**, and **web recon**.
+A blazing-fast **Bash CLI tool** that fetches historical URLs from the **Wayback Machine (archive.org)** for a single domain or a list of domains — perfect for **bug bounty**, **OSINT**, and **web recon**.
 
 Built by: **Mayank Malaviya** ([@AIwolfie](https://github.com/AIwolfie)) ⚡
 
@@ -10,17 +10,18 @@ Built by: **Mayank Malaviya** ([@AIwolfie](https://github.com/AIwolfie)) ⚡
 ## 📦 Features
 
 ✅ Fetch URLs archived by the Wayback Machine  
-✅ Supports single domain `-d` or list from file `-l`  
-✅ Multithreaded for fast execution  
-✅ Outputs unique URLs only  
-✅ Verbose mode to show live fetching  
-✅ Summary of total domains, URLs, and time taken  
+✅ Supports single domain `-d` or domain list from file `-l`  
+✅ Deduplicates results automatically  
+✅ Verbose mode for live URL + domain feedback  
+✅ Built-in progress bar, error handling & summary  
+✅ Written entirely in **pure Bash**, no Python needed!
 
 ---
 
 ## 🚀 Installation
 
 ### 1. Clone or download this repo
+
 ```bash
 git clone https://github.com/AIwolfie/waybackfetcher.git
 cd waybackfetcher
@@ -29,7 +30,7 @@ cd waybackfetcher
 ### 2. Make the script executable
 
 ```bash
-chmod +x waybackfetcher.py
+chmod +x waybackfetcher.sh
 ```
 
 ### 3. (Optional) Install globally to use like a command
@@ -37,32 +38,32 @@ chmod +x waybackfetcher.py
 #### A. Move to `/usr/local/bin/`
 
 ```bash
-sudo mv waybackfetcher.py /usr/local/bin/waybackfetcher
+sudo mv waybackfetcher.sh /usr/local/bin/waybackfetcher
 ```
 
 #### B. Or symlink if you still want to edit:
 
 ```bash
-sudo ln -s $(pwd)/waybackfetcher.py /usr/local/bin/waybackfetcher
+sudo ln -s $(pwd)/waybackfetcher.sh /usr/local/bin/waybackfetcher
 ```
 
 ---
 
 ## 🧪 Usage
 
-### Single domain
+### Fetch for a single domain
 
 ```bash
 waybackfetcher -d example.com -o urls.txt
 ```
 
-### Multiple domains
+### Fetch for a list of domains
 
 ```bash
 waybackfetcher -l domains.txt -o results.txt
 ```
 
-### Verbose output (shows URLs live + per-domain count)
+### Enable verbose mode (shows URLs + per-domain stats)
 
 ```bash
 waybackfetcher -l domains.txt -o results.txt -v
@@ -81,47 +82,55 @@ waybackfetcher -h
 Output:
 
 ```
-usage: waybackfetcher [-h] (-d DOMAIN | -l LIST) -o OUTPUT [-v]
+Usage: waybackfetcher [-d DOMAIN | -l FILE] -o OUTPUT [-v]
 
-🕸️ Wayback URL Fetcher - Fast historical URL fetcher from the Wayback Machine.
-
-options:
-  -h, --help        Show this help message and exit
-  -d DOMAIN         Single domain (e.g. example.com)
-  -l LIST           File containing domains (one per line)
-  -o OUTPUT         Output file to save all unique URLs
-  -v, --verbose     Show live URLs and per-domain counts
+  -d DOMAIN     Single domain to fetch URLs (e.g. example.com)
+  -l FILE       File containing domains (one per line)
+  -o FILE       Output file to save results
+  -v            Verbose mode (show live status)
+  -h            Show help menu
 ```
 
 ---
 
 ## 📥 Output
 
-* All URLs are saved to the file specified with `-o`
-* Duplicates are removed
-* Each run prints a summary including:
+📝 All URLs are saved to the file you provide using `-o`
+🧹 Results are automatically deduplicated
+📊 After execution, a clean summary is printed with:
 
-  * Domains processed
-  * Total unique URLs
-  * Time taken
+* Total domains processed
+* Empty domains (no URLs found)
+* Total unique URLs
+* Time taken to complete
 
 ---
 
 ## 🧠 Suggestions if no URLs are found
 
-If you see:
+If you see something like:
 
 ```
 [!] No URLs found for:
-   - somedomain.com
-
-💡 Tips:
-   - Maybe it’s a *new domain* (no archive yet).
-   - Try *subdomain enumeration* for more data.
-   - Check spelling or try alternative TLDs.
+   - xyzdomain.com
 ```
 
-These are friendly hints to improve recon coverage.
+💡 Tips:
+
+* It might be a new or rarely visited domain
+* Try discovering subdomains using tools like `subfinder`, `amass`, or `crt.sh`
+* Check domain spelling or use alternative TLDs (like `.in`, `.org`, `.net`)
+
+---
+
+
+### 🔧 CLI Run with Progress Bar and Summary
+
+```
+🔄 Progress: [██████████████████------------] 7/14 (50%) | Time: 12s
+[✔] example.com => 149 URLs
+[!] noresultsdomain.io => No URLs found
+```
 
 ---
 
@@ -141,7 +150,5 @@ MIT License
 
 ---
 
-## ☕ Like it?
-<a href="https://www.buymeacoffee.com/mayankmalac" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-Star it on GitHub and share with your recon team 🖤
+🖤 Star the repo on GitHub and share with your OSINT/recon team!
