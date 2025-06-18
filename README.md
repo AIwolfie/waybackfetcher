@@ -1,5 +1,5 @@
 
-# 🕸️ Wayback URL Fetcher (Bash Edition)
+# 🕸️ Wayback URL Fetcher 
 
 A blazing-fast **Bash CLI tool** that fetches historical URLs from the **Wayback Machine (archive.org)** for a single domain or a list of domains — perfect for **bug bounty**, **OSINT**, and **web recon**.
 
@@ -13,7 +13,7 @@ Built by: **Mayank Malaviya** ([@AIwolfie](https://github.com/AIwolfie)) ⚡
 ✅ Supports single domain `-d` or domain list from file `-l`  
 ✅ Deduplicates results automatically  
 ✅ Verbose mode for live URL + domain feedback  
-✅ Built-in progress bar, error handling & summary  
+✅ error handling & summary  
 ✅ Written entirely in **pure Bash**, no Python needed!
 
 ---
@@ -123,16 +123,6 @@ If you see something like:
 
 ---
 
-
-### 🔧 CLI Run with Progress Bar and Summary
-
-```
-🔄 Progress: [██████████████████------------] 7/14 (50%) | Time: 12s
-[✔] example.com => 149 URLs
-[!] noresultsdomain.io => No URLs found
-```
-
----
 
 ## 🧑‍💻 Author
 
